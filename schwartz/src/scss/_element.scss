@@ -1,0 +1,21 @@
+@import "_variables.scss";
+
+%categoryTitle {
+  font-weight: 600;
+  font-size: 25px;
+  margin-bottom: 50px;
+}
+
+%btn {
+  text-decoration: none;
+  color: inherit;
+  border: $border;
+  padding: 10px 40px;
+  font-weight: 500;
+  border-radius: 40px;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
