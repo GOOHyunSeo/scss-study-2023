@@ -1,0 +1,69 @@
+@import "_reset.scss";
+
+@import "_variables.scss";
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: $backgroundColor;
+  color: $backgroundColor;
+  font-size: 22px;
+  display: grid;
+  grid-template-columns: 1fr 1.7fr 1fr;
+  gap: 1px;
+  text-transform: uppercase;
+}
+.left,
+.middle,
+.right {
+  display: grid;
+  grid-template-rows: 1fr repeat(5, 2fr) 1fr;
+  gap: 1px;
+  background-color: white;
+  .middle__photo {
+    grid-row: 2 / span 5;
+    background-image: url("https://source.unsplash.com/random/");
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+contant {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:not(.bottom) {
+    border-bottom: 1px solid $backgroundColor;
+  }
+}
+
+.hover {
+  transition: all 0.2s ease;
+  &:hover {
+    background-color: $backgroundColor;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.scrollingText {
+  overflow: hidden;
+  white-space: nowrap;
+  span {
+    animation: scrollingText 5s linear infinite forwards;
+  }
+}
+
+@keyframes scrollingText {
+  0% {
+    transform: translateX(-100px);
+  }
+  50% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(-100px);
+  }
+}
